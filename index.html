@@ -5,6 +5,18 @@
   <title>Thank you for you patience</title>
   <meta name="description" content="Thank you for you patience">
   <meta name="author" content="DannyBrownSugar">
+  
+  <script type="text/javascript" src="http://cdn.jwplayer.com/players/nPripu9l-ALJ3XQCI.js"></script>
+  <script type="text/javascript" defer>
+  
+var playerInstance = jwplayer("player");
+playerInstance.setup({
+	file: "//www.youtube.com/watch?v=aXYtJB7Qslk",
+	autoplay: true,
+	width: 640,
+	height: 40
+});
+	</script>
   <style>
   
 @font-face {
@@ -28,10 +40,16 @@ body {
     font-size: 2pc;
 }
 
+.jw-reset {
+	display: none;
+}
+
   </style>
 </head>
 <body>
   <div class="thank-you">Thank You</div>
   <div class="fyp"> for your patience</div>
+  <div id="player">Loading the player...</div>
+ 
 </body>
 </html>
