@@ -5,18 +5,13 @@
   <title>Thank you for you patience</title>
   <meta name="description" content="Thank you for you patience">
   <meta name="author" content="DannyBrownSugar">
+  <script type="text/javascript">
+window.onbeforunload = function () {
+  window.scrollTo(0, 0);
+}
+  </script>
+
   
-  <script type="text/javascript" src="http://cdn.jwplayer.com/players/nPripu9l-ALJ3XQCI.js"></script>
-  <script type="text/javascript" defer>
-  
-var playerInstance = jwplayer("player");
-playerInstance.setup({
-	file: "//www.youtube.com/watch?v=aXYtJB7Qslk",
-	autoplay: true,
-	width: 640,
-	height: 40
-});
-	</script>
   <style>
   
 @font-face {
@@ -30,14 +25,21 @@ body {
 	text-align: center;
 }
 
+.center = {
+	margin: 0 auto 0;
+}
+
 .thank-you {
-	margin: 10% auto 0;
-    font-size: 5pc;
+	margin-top: 10%;
+    font-size: 16pc;
 }
 
 .fyp {
-	margin: 0 auto;
-    font-size: 2pc;
+    font-size: 4pc;
+}
+
+.relaxing-music {
+	margin-top: 30%
 }
 
 .jw-reset {
@@ -47,9 +49,10 @@ body {
   </style>
 </head>
 <body>
-  <div class="thank-you">Thank You</div>
-  <div class="fyp"> for your patience</div>
-  <div id="player">Loading the player...</div>
+  <div class="thank-you center">Thank You</div>
+  <div class="fyp center"> for your patience</div>
+ 
+  <iframe class="relaxing-music" width="640" height="360" src="https://www.youtube.com/embed/aXYtJB7Qslk?autoplay=1&start=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
  
 </body>
 </html>
