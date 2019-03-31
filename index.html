@@ -3,12 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>Thank you for you patience</title>
-  <meta name="description" content="Thank you for you patience">
+  <meta name="description" content="For when you just need to make them wait">
   <meta name="author" content="DannyBrownSugar">
   <script type="text/javascript">
+
 window.onbeforunload = function () {
   window.scrollTo(0, 0);
 }
+
   </script>
 
   
@@ -29,7 +31,7 @@ body {
 	text-shadow: 0px 4px 14px #000000;
 }
 
-.center = {
+.center {
 	margin: 0 auto 0;
 }
 
@@ -42,6 +44,7 @@ body {
     font-size: 4vw;
 }
 
+#player,
 .relaxing-music {
 	width: 40vw;
 	height: 22.5vw;
@@ -66,13 +69,61 @@ body {
   </style>
 </head>
 <body>
-  <div class="thank-you center">Thank You</div>
-  <div class="fyp center"> for your patience</div>
+<div class="thank-you center">Thank You</div>
+<div class="fyp center"> for your patience</div>
 
-  <div class="fb"></div>
+<div class="fb"></div>
 
- 
-  <iframe class="relaxing-music" width="640" height="360" src="https://www.youtube.com/embed/aXYtJB7Qslk?autoplay=1&start=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
- 
+<div id="player"></div>
+<script type="text/javascript">
+    // loads youtube in external iframe
+
+function onPlayerReady(event) {
+    console.log('332');
+    playEventually();
+}
+
+
+function playEventually(event) {
+    console.log('121');
+
+    console.log(player.getPlayerState());
+    console.log(player);
+
+    if (player.getPlayerState() === 5) {
+        console.log('162222');
+        player.playVideo(10);
+    }
+
+    if (YT.PlayerState.PLAYING !== player.getPlayerState()) {
+        setTimeout(playEventually, 1000);
+    }
+
+}
+
+
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: 'aXYtJB7Qslk?start=1',
+        events: {
+            'onReady': onPlayerReady,
+            // 'onStateChange': onPlayerStateChange
+        },
+        playerVars: { 'autoplay': 1, 'origin':'http://thankyouforyourpatience.com' },
+    });
+}
+
+</script>
+
 </body>
 </html>
