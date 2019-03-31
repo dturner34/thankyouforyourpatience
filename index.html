@@ -9,7 +9,11 @@
 
 window.onbeforunload = function () {
   window.scrollTo(0, 0);
-}
+};
+
+window.unload = function () {
+    window.scrollTo(0, 0);
+};
 
   </script>
 
@@ -26,8 +30,9 @@ body {
 	color: #ffeff7;
 	text-align: center;
 	background-image: url(./images/background.jpg);
-    	background-size: cover;
-    	background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 	text-shadow: 0px 4px 14px #000000;
 }
 
@@ -40,12 +45,13 @@ body {
     font-size: 16vw;
 }
 
+
+
 .fyp {
     font-size: 4vw;
 }
 
-#player,
-.relaxing-music {
+#player {
 	width: 40vw;
 	height: 22.5vw;
 	position: absolute;
@@ -62,8 +68,11 @@ body {
 	bottom: 1vw;
 }
 
-.jw-reset {
-	display: none;
+
+@media only screen and (orientation : portrait) {
+    .thank-you {
+        margin-top: 50%;
+    }
 }
 
   </style>
@@ -79,20 +88,15 @@ body {
     // loads youtube in external iframe
 
 function onPlayerReady(event) {
-    console.log('332');
     playEventually();
 }
 
 
 function playEventually(event) {
-    console.log('121');
-
-    console.log(player.getPlayerState());
-    console.log(player);
-
     if (player.getPlayerState() === 5) {
-        console.log('162222');
+        player.mute();
         player.playVideo(10);
+        setTimeout(function() { player.unMute(); }, 200);
     }
 
     if (YT.PlayerState.PLAYING !== player.getPlayerState()) {
@@ -117,7 +121,6 @@ function onYouTubeIframeAPIReady() {
         videoId: 'aXYtJB7Qslk?start=1',
         events: {
             'onReady': onPlayerReady,
-            // 'onStateChange': onPlayerStateChange
         },
         playerVars: { 'autoplay': 1, 'origin':'http://thankyouforyourpatience.com' },
     });
