@@ -92,7 +92,10 @@ function onPlayerReady() {
 
 
 function playEventually() {
-    if (player.getPlayerState() === 5 || player.getPlayerState() === 2) {
+    if (player.getPlayerState() === 5
+    // keep them from muting
+    // || player.getPlayerState() === 2
+    ) {
         player.playVideo(1);
     }
 
