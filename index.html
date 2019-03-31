@@ -85,24 +85,18 @@ body {
 
 <div id="player"></div>
 <script type="text/javascript">
-    // loads youtube in external iframe
 
-function onPlayerReady(event) {
+function onPlayerReady() {
     playEventually();
 }
 
 
-function playEventually(event) {
-    if (player.getPlayerState() === 5) {
-        player.mute();
-        player.playVideo(10);
-        setTimeout(function() { player.unMute(); }, 200);
+function playEventually() {
+    if (player.getPlayerState() === 5 || player.getPlayerState() === 2) {
+        player.playVideo(1);
     }
 
-    if (YT.PlayerState.PLAYING !== player.getPlayerState()) {
-        setTimeout(playEventually, 1000);
-    }
-
+    setTimeout(playEventually, 1000);
 }
 
 
