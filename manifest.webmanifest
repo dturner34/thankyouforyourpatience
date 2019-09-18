@@ -9,8 +9,8 @@
     "description" : "For when you just need to make them wait...",
     "orientation" : "any",
     "background_color" : "transparent",
-    "related_applications" : "",
-    "prefer_related_applications" : "false",
+    "related_applications" : [],
+    "prefer_related_applications" : false,
     "generated" : "true",
     "icons" : [
         {

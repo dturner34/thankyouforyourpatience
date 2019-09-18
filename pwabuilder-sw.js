@@ -2,16 +2,12 @@
 
 const CACHE = "pwabuilder-page";
 
-const offlineFallbackPage = "offline.html";
+const offlineFallbackPage = "/offline.html";
 
 // Install stage sets up the offline page in the cache and opens a new cache
 self.addEventListener("install", function (event) {
-  console.log("[PWA Builder] Install Event processing");
-
   event.waitUntil(
     caches.open(CACHE).then(function (cache) {
-      console.log("[PWA Builder] Cached offline page during install");
-
       if (offlineFallbackPage === "ToDo-replace-this-name.html") {
         return cache.add(new Response("TODO: Update the value of the offlineFallbackPage constant in the serviceworker."));
       }
@@ -49,7 +45,6 @@ self.addEventListener("refreshOffline", function () {
 
   return fetch(offlineFallbackPage).then(function (response) {
     return caches.open(CACHE).then(function (cache) {
-      console.log("[PWA Builder] Offline page updated from refreshOffline event: " + response.url);
       return cache.put(offlinePageRequest, response);
     });
   });
