@@ -2,19 +2,31 @@
     "lang" : "en",
     "name" : "Thank you for you patience",
     "scope" : "/",
-    "display" : "browser",
+    "display" : "fullscreen",
     "start_url" : "https://thankyouforyourpatience.com/",
-    "short_name" : "Thank you for y",
-    "theme_color" : "transparent",
+    "short_name" : "Thank you",
+    "theme_color" : "#ffeff7",
     "description" : "For when you just need to make them wait...",
     "orientation" : "any",
-    "background_color" : "transparent",
+    "background_color" : "#ffeff7",
     "related_applications" : [],
     "prefer_related_applications" : false,
     "generated" : "true",
+	"splash_screen": {
+        "theme_color": "white",
+        "background_color": "white",
+        "icons": [{
+            "src": https://thankyouforyourpatience.com/images/icon.png",
+			"sizes": "512x512"
+        }]
+    },
     "icons" : [
         {
             "src": "https://thankyouforyourpatience.com/favicon.ico",
             "sizes": "256x256 128x128 64x64 48x48 32x32 16x16"
+        },
+		{
+            "src": https://thankyouforyourpatience.com/images/icon.png",
+			"sizes": "512x512"
         }
     ]}
