@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Thank you for you patience</title>
-  <meta name="description" content="For when you just need to make them wait">
+  <meta name="description" content="For when you just need to make them wait...">
   <meta name="author" content="DannyBrownSugar">
   <script type="text/javascript">
 
@@ -87,7 +87,7 @@ body {
 <script type="text/javascript">
 
 function onPlayerReady() {
-    playEventually();
+    setTimeout(playEventually, 500);
 }
 
 
@@ -119,7 +119,7 @@ function onYouTubeIframeAPIReady() {
         events: {
             'onReady': onPlayerReady,
         },
-        playerVars: { 'autoplay': 1, 'origin':'http://thankyouforyourpatience.com' },
+        playerVars: { 'autoplay': 1, 'origin':'https://thankyouforyourpatience.com' },
     });
 }
 
