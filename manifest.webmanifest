@@ -1,0 +1,20 @@
+{"dir" : "ltr",
+    "lang" : "en",
+    "name" : "Thank you for you patience",
+    "scope" : "/",
+    "display" : "browser",
+    "start_url" : "https://thankyouforyourpatience.com/",
+    "short_name" : "Thank you for y",
+    "theme_color" : "transparent",
+    "description" : "For when you just need to make them wait...",
+    "orientation" : "any",
+    "background_color" : "transparent",
+    "related_applications" : "",
+    "prefer_related_applications" : "false",
+    "generated" : "true",
+    "icons" : [
+        {
+            "src": "https://thankyouforyourpatience.com/favicon.ico",
+            "sizes": "256x256 128x128 64x64 48x48 32x32 16x16"
+        }
+    ]}
