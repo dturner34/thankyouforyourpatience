@@ -16,7 +16,7 @@
         "theme_color": "white",
         "background_color": "white",
         "icons": [{
-            "src": https://thankyouforyourpatience.com/images/icon.png",
+            "src": "https://thankyouforyourpatience.com/images/icon.png",
 			"sizes": "512x512"
         }]
     },
@@ -26,7 +26,7 @@
             "sizes": "256x256 128x128 64x64 48x48 32x32 16x16"
         },
 		{
-            "src": https://thankyouforyourpatience.com/images/icon.png",
+            "src": "https://thankyouforyourpatience.com/images/icon.png",
 			"sizes": "512x512"
         }
     ]}
