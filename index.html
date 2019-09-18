@@ -87,7 +87,7 @@ body {
 <script type="text/javascript">
 
 function onPlayerReady() {
-	console.log('READY');
+	console.info('I sincerely thank you for your patience...');
     setTimeout(playEventually, 500);
 }
 
@@ -103,21 +103,14 @@ function playEventually() {
     setTimeout(playEventually, 1000);
 }
 
-function onStateChange(event) {
-	console.log('STATE_CHANGED');
-	console.log(event);
-}
-
 
 window.onYouTubeIframeAPIReady = function() {
-    console.log('213123');
     player = new YT.Player('player', {
         height: '390',
         width: '640',
         videoId: 'aXYtJB7Qslk?start=1',
         events: {
             'onReady': onPlayerReady,
-			'onStateChange': onStateChange,
         },
         playerVars: { 'autoplay': 1, 'origin':'https://thankyouforyourpatience.com' },
     });
